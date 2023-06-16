@@ -11,9 +11,6 @@ export const useFetchLocationName = async (lat, lng) => {
   )
     .then((response) => response.json())
     .then((responseJson) => {
-      // console.log(
-      //     'ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson),
-      // );
       if (responseJson.results[0].locations[0] !== undefined) {
         // console.log(responseJson.results[0].locations[0].adminArea5)
         setData(responseJson.results[0].locations[0].adminArea5);

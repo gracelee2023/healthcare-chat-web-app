@@ -33,21 +33,35 @@ export function SearchBar(props) {
       <div className="row pt-3">
         <div className="col-3">
           <Link to="/" className="text-decoration-none">
-            <h1 className="ps-3 fw-bolder text-blue">
-              EventChat
-              <i className="bi bi-chat text-primary ms-2"></i>
+            <h1 className="ps-3 fw-bolder text-black">
+              Yelp
+              <i className="bi bi-yelp text-danger ms-2"></i>
             </h1>
           </Link>
         </div>
-        <div className="col-5 pt-1">
+        <div className="col-6 pt-1">
           <div className="row">
             <div className={styles.landing}>
               <div className={styles["search-area"]}>
                 <form onSubmit={submit}>
                   <div className="field has-addons">
+                    <p className="control">
+                      <button className={`button is-static ${sizeClass}`}>
+                        Search
+                      </button>
+                    </p>
+                    <p className="control">
+                      <input
+                        className={`input ${sizeClass} ${styles["input-control"]}`}
+                        onChange={(e) => setTerm(e.target.value)}
+                        type="text"
+                        value={term}
+                        placeholder="burgers, piazza, beer"
+                      />
+                    </p>
                     <div className="control">
                       <div className={`button is-static ${sizeClass}`}>
-                        Event in
+                        NEAR
                       </div>
                     </div>
                     <p className="control">
@@ -59,21 +73,6 @@ export function SearchBar(props) {
                         placeholder="Where"
                       />
                     </p>
-                    <p className="control">
-                      <button className={`button is-static ${sizeClass}`}>
-                        Date
-                      </button>
-                    </p>
-                    <p className="control">
-                      <input
-                        className={`input ${sizeClass} ${styles["input-control"]}`}
-                        onChange={(e) => setTerm(e.target.value)}
-                        type="date"
-                        value={term}
-                        placeholder=""
-                      />
-                    </p>
-
                     <div
                       className={`button ${sizeClass} ${styles["search-button"]}`}
                       onClick={submit}
@@ -90,7 +89,7 @@ export function SearchBar(props) {
             </div>
           </div>
         </div>
-        <div className="col-4 pt-1">
+        <div className="col-3 pt-1">
           <h3 className="text-black float-end pe-5">
             {!props.loggedIn && (
               <>
@@ -99,12 +98,12 @@ export function SearchBar(props) {
                     Log In
                   </Link>
                 </button>
-                <button className="btn btn-primary fw-bolder">
+                <button className="btn btn-danger fw-bolder">
                   <Link
                     to="/signup"
                     className="text-decoration-none text-white"
                   >
-                    Register
+                    Sign Up
                   </Link>
                 </button>
               </>

@@ -3,7 +3,7 @@ import "./home.css";
 import { SearchBar } from "../SearchLandingScreen/SearchBar/SearchBar";
 import HomePostsList from "../HomePostsList";
 import * as authService from "../services/auth-service.js";
-import * as api from "../services/officalEventbrite/eventbrite-api.js";
+import * as api from "../services/officialyelp/yelp-api.js";
 import { useAddress } from "../services/GetUserAddress/GetAddress.js";
 import ReviewListAdmin from "../ReviewList/ReviewListAdmin.js";
 

@@ -20,11 +20,11 @@ function Signup() {
 
   return (
     <div>
-      <div className="bg-primary">
-        <Link to="/" className="text-primary">
-          <h1 className="fw-bolder text-white text-left pt-1">
-            EventChat
-            <i className="bi bi-chat ms-2"></i>
+      <div className="login-banner bg-danger">
+        <Link to="/" className="text-decoration-none">
+          <h1 className="fw-bolder text-white text-center pt-1">
+            Yelp
+            <i className="bi bi-yelp ms-2" />
           </h1>
         </Link>
       </div>
@@ -36,7 +36,30 @@ function Signup() {
           >
             <div className="signup-form-container">
               <div className="header">
-                <h2 className="login-title text-danger fw-bold">Sign Up</h2>
+                <h2 className="login-title text-danger fw-bold">
+                  Sign Up for Yelp
+                </h2>
+                <p className="subheading">
+                  <b>Connect with great local businesses</b>
+                </p>
+                <p className="legal-copy">
+                  By continuing, you agree to Yelp’s
+                  <a
+                    className="legal-link no-decoration"
+                    href="https://www.yelp.com/static?p=tos"
+                  >
+                    {" "}
+                    Terms of Service
+                  </a>{" "}
+                  and
+                  <a
+                    className="legal-link no-decoration"
+                    href="https://www.yelp.com/tos/privacy_policy"
+                  >
+                    {" "}
+                    Privacy Policy
+                  </a>
+                </p>
               </div>
               <div>
                 <input
@@ -68,7 +91,7 @@ function Signup() {
                   placeholder="password"
                   type="password"
                 />
-                {/* <input
+                <input
                   className="mb-2 form-control"
                   onChange={(e) =>
                     setNewUser({ ...newUser, email: e.target.value })
@@ -91,15 +114,15 @@ function Signup() {
                     setNewUser({ ...newUser, dateOfBirth: e.target.value })
                   }
                   type="Date"
-                /> */}
+                />
                 <button onClick={signup} className="btn btn-danger btn-width">
                   Sign up
                 </button>
               </div>
               <div className="sub-text-box">
                 <small>
-                  Already on EventChat?{" "}
-                  <a className="no-decoration fw-bold" href="/login">
+                  Already on Yelp?{" "}
+                  <a className="no-decoration" href="/login">
                     Log in
                   </a>
                 </small>
@@ -108,7 +131,7 @@ function Signup() {
           </div>
           <div className="d-none d-md-block col-6 col-md-6 col-lg-5 col-xl-6">
             <div className="picture-container">
-              <img src="/images/signup.webp" />
+              <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" />
             </div>
           </div>
         </div>
