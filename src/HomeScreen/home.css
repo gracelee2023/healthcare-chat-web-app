@@ -1,0 +1,17 @@
+.wd-home_banner {
+    height: 800px;
+    width: 100%;
+    background-image: url("../../public/images/home_banner.jpeg");
+    background-size: cover;
+}
+
+.wd-nudge-up {
+    bottom: 50%;
+    left: 40%
+}
+
+.wd-align-center {
+    bottom: 50%;
+    left: 38%;
+    font-size: 70px;
+}
