@@ -8,7 +8,13 @@ function Login() {
   const login = () => {
     service
       .login(loginUser)
-      .then((user) => navigate("/"))
+      .then((user) => {
+        if (user.accountType === "ADMIN") {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
+      })
       .catch((e) => alert(e));
   };
 
