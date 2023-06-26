@@ -5,6 +5,7 @@ import StarRating from "../StarRate";
 
 const ReviewListItem = ({ item }) => {
   const [user, setUser] = useState({});
+
   useEffect(() => {
     try {
       const getUserById = async () =>
@@ -26,7 +27,7 @@ const ReviewListItem = ({ item }) => {
                   <img
                     src={
                       user.profilePhoto === undefined
-                        ? "https://pbs.twimg.com/profile_images/1599202909962412032/QbvIJjti_400x400.jpg"
+                        ? "/images/user_profile.jpeg"
                         : `${user.profilePhoto}`
                     }
                     className="reviewList-photo"
@@ -46,6 +47,7 @@ const ReviewListItem = ({ item }) => {
                 </h2>
               </div>
             </div>
+
             <StarRating rating={item.star} />
             <p className="mt-3">"{item.text}"</p>
             <p className="wd-right me-1">{item.reviewTime.substring(0, 10)}</p>

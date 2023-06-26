@@ -93,6 +93,7 @@ export function SearchBar(props) {
           <h3 className="text-black float-end pe-5">
             {!props.loggedIn && (
               <>
+                <label>Leave your reviews?</label>
                 <button className="btn btn-outline-dark me-2 fw-bolder">
                   <Link to="/login" className="text-decoration-none text-black">
                     Log In

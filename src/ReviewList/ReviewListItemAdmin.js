@@ -27,10 +27,10 @@ const ReviewItemAdmin = ({ item, deleteReview }) => {
           </div>
           <div className="col-9 col-sm-8">
             <StarRating rating={item.star} />
-            <i
+            {/* <i
               className="bi bi-x-lg float-end"
               onClick={() => deleteReview(item._id)}
-            ></i>
+            ></i> */}
             <p className="mt-3">"{item.text}"</p>
             <p className="wd-white wd-signin">
               <Link to={`/profile/${user.username}`} className="wd-white">

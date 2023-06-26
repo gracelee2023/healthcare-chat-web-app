@@ -3,7 +3,7 @@ import PostItem from "./PostItem";
 
 const HomePostsList = (props) => {
   let businessesData = [];
-  let loggedIn = props.loggedIn;
+  // let loggedIn = props.loggedIn;
   if (props.businessesData && props.businessesData.length) {
     businessesData = props.businessesData;
   }
@@ -11,7 +11,7 @@ const HomePostsList = (props) => {
     <>
       <ul className="list-inline">
         {businessesData.map((business) => (
-          <PostItem loggedIn={loggedIn} key={business.id} business={business} />
+          <PostItem key={business.id} business={business} />
         ))}
       </ul>
     </>
