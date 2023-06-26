@@ -10,7 +10,7 @@ const AnoyProfile = ({ profile }) => {
         <img
           src={
             profile.profilePhoto === undefined || null
-              ? "https://pbs.twimg.com/profile_images/1599202909962412032/QbvIJjti_400x400.jpg"
+              ? "/images/user_profile.jpeg"
               : `${profile.profilePhoto}`
           }
           className="wd-profile-photo"
@@ -27,7 +27,7 @@ const AnoyProfile = ({ profile }) => {
           <br />
           {profile.thingsILove && <span>{profile.thingsILove}</span>}
           {profile.thingsILove === undefined && (
-            <span>You haven't told us yet ... do tell!</span>
+            <span>You haven't told us anything yet ... </span>
           )}
         </p>
       </div>

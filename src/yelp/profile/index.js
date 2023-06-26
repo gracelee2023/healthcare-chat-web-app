@@ -12,7 +12,7 @@ import "./index.css";
 import { useParams } from "react-router";
 import UserProfile from "./user-profile";
 import AdminProfile from "./admin-profile";
-import AnoyProfile from "./anoy-profile";
+import AnoyProfile from "./public-profile";
 import BussinessProfile from "./business-profile";
 import { SearchBar } from "../../SearchLandingScreen/SearchBar/SearchBar";
 

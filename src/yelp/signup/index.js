@@ -4,8 +4,66 @@ import React, { useState } from "react";
 
 function Signup() {
   const [newUser, setNewUser] = useState({});
+  // const [accountType, setAccountType] = useState("");
+  // const [secretKey, setSecretKey] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [zipcode, setZipcode] = useState("");
+  // const [dateOfBirth, setDateOfBirth] = useState("");
+  // const [error, setError] = useState("");
+
   const navigate = useNavigate();
+
   const signup = () => {
+    // if (accountType === "ADMIN" && secretKey !== "cs5610") {
+    //   e.preventDefault();
+    //   alert("Invalid Admin");
+    // } else {
+    //   e.preventDefault();
+    //   console.log(
+    //     firstName,
+    //     lastName,
+    //     username,
+    //     email,
+    //     accountType,
+    //     password,
+    //     zipcode,
+    //     dateOfBirth
+    //   );
+    //   fetch("http://localhost:4000/api/auth/signup", {
+    //     method: "POST",
+    //     crossDomain: true,
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       Accept: "application/json",
+    //       "Access-Control-Allow-Origin": "*",
+    //     },
+    //     body: JSON.stringify({
+    //       accountType,
+    //       username,
+    //       password,
+    //       email,
+    //       firstName,
+    //       lastName,
+    //       zipcode,
+    //       dateOfBirth,
+    //     }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data, "userRegister");
+    //       if (data.message === "Success") {
+    //         // window.localStorage.setItem("token", data.data);
+    //         navigate(`/profile/${username}`);
+    //       } else {
+    //         alert("USER ALREADY EXISTS USE DIFFERENT EMAIL ID");
+    //         navigate("/signup");
+    //       }
+    //     });
+
     const user = {
       ...newUser,
       joined: new Date().getDate(),
@@ -20,11 +78,11 @@ function Signup() {
 
   return (
     <div>
-      <div className="login-banner bg-danger">
+      <div className="login-banner bg-primary">
         <Link to="/" className="text-decoration-none">
-          <h1 className="fw-bolder text-white text-center pt-1">
-            Yelp
-            <i className="bi bi-yelp ms-2" />
+          <h1 className="fw-bolder text-white text-left pt-1">
+            HealthcareReview
+            <i className="bi bi-chat ms-2" />
           </h1>
         </Link>
       </div>
@@ -36,32 +94,41 @@ function Signup() {
           >
             <div className="signup-form-container">
               <div className="header">
-                <h2 className="login-title text-danger fw-bold">
-                  Sign Up for Yelp
-                </h2>
-                <p className="subheading">
-                  <b>Connect with great local businesses</b>
-                </p>
-                <p className="legal-copy">
-                  By continuing, you agree to Yelp’s
-                  <a
-                    className="legal-link no-decoration"
-                    href="https://www.yelp.com/static?p=tos"
-                  >
-                    {" "}
-                    Terms of Service
-                  </a>{" "}
-                  and
-                  <a
-                    className="legal-link no-decoration"
-                    href="https://www.yelp.com/tos/privacy_policy"
-                  >
-                    {" "}
-                    Privacy Policy
-                  </a>
-                </p>
+                <h2 className="login-title fw-bold">Sign Up</h2>
               </div>
-              <div>
+              {/* <div>
+                Register As
+                <input
+                  className="mb-2"
+                  type="radio"
+                  name="AccountType"
+                  value="PERSONAL"
+                  onChange={(e) => setAccountType(e.target.value.accountType)}
+                />
+                PERSONAL
+                <input
+                  className="mb-2"
+                  type="radio"
+                  name="AccountType"
+                  value="ADMIN"
+                  onChange={(e) => setAccountType(e.target.value.accountType)}
+                />
+                ADMIN
+              </div>
+
+              {accountType === "Admin" ? (
+                <div className="mb-3">
+                  <label>Secret Key</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Secret Key"
+                    onChange={(e) => setSecretKey(e.target.value)}
+                  />
+                </div>
+              ) : null} */}
+
+              <div className="mt-2">
                 <input
                   className="mb-2 form-control"
                   placeholder="First Name"
@@ -116,12 +183,12 @@ function Signup() {
                   type="Date"
                 />
                 <button onClick={signup} className="btn btn-danger btn-width">
-                  Sign up
+                  Register
                 </button>
               </div>
               <div className="sub-text-box">
                 <small>
-                  Already on Yelp?{" "}
+                  Already on HealthcareReview?{" "}
                   <a className="no-decoration" href="/login">
                     Log in
                   </a>
@@ -131,7 +198,7 @@ function Signup() {
           </div>
           <div className="d-none d-md-block col-6 col-md-6 col-lg-5 col-xl-6">
             <div className="picture-container">
-              <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" />
+              <img src="/images/signup.jpeg" />
             </div>
           </div>
         </div>

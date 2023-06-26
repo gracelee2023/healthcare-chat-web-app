@@ -12,15 +12,15 @@ const HomeComponent = () => {
   const [addressData, setAddressData] = useState("");
   const [businessesData, setBusinessesData] = useState({});
   const [currentUser, setCurrentUser] = useState({});
-  useEffect(() => {
-    try {
-      const getProfile = async () =>
-        await authService.profile().then((user) => setCurrentUser(user));
-      let user = getProfile();
-    } catch (e) {
-      setCurrentUser(undefined);
-    }
-  }, []);
+  // useEffect(() => {
+  //   try {
+  //     const getProfile = async () =>
+  //       await authService.profile().then((user) => setCurrentUser(user));
+  //     let user = getProfile();
+  //   } catch (e) {
+  //     setCurrentUser(undefined);
+  //   }
+  // }, []);
   // console.log(currentUser)
   loggedIn = currentUser.username !== undefined;
 

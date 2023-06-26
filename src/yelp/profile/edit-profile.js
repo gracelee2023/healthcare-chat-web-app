@@ -49,7 +49,7 @@ const EditProfile = () => {
   const editProfile = () => {
     service
       .update(updateUser)
-      .then(() => navigate("/login"))
+      .then(() => navigate("/profile/" + profile.username))
       .catch((e) => alert(e));
   };
 
@@ -76,7 +76,7 @@ const EditProfile = () => {
           <img
             src={
               profile.profilePhoto === undefined
-                ? "https://pbs.twimg.com/profile_images/1599202909962412032/QbvIJjti_400x400.jpg"
+                ? "/images/user_profile.jpeg"
                 : `${profile.profilePhoto}`
             }
             className="wd-profile-photo"

@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
 export function SearchBar(props) {
-  const [term, setTerm] = useState(props.term || "");
+  const [term, setTerm] = useState(props.term || "healthcare provider");
   const [location, setLocation] = useState(props.location || "");
 
   const navigate = useNavigate();
@@ -33,10 +33,10 @@ export function SearchBar(props) {
       <div className="row pt-3">
         <div className="col-3">
           <Link to="/" className="text-decoration-none">
-            <h1 className="ps-3 fw-bolder text-black">
-              Yelp
-              <i className="bi bi-yelp text-danger ms-2"></i>
-            </h1>
+            <h4 className="ps-3 fw-bolder text-blue">
+              HealthcareReview
+              <i className="bi bi-chat text-primary ms-2 bold-icon"></i>
+            </h4>
           </Link>
         </div>
         <div className="col-6 pt-1">
@@ -56,7 +56,7 @@ export function SearchBar(props) {
                         onChange={(e) => setTerm(e.target.value)}
                         type="text"
                         value={term}
-                        placeholder="burgers, piazza, beer"
+                        placeholder="healthcare provider"
                       />
                     </p>
                     <div className="control">
@@ -73,7 +73,7 @@ export function SearchBar(props) {
                         placeholder="Where"
                       />
                     </p>
-                    <div
+                    {/* <div
                       className={`button ${sizeClass} ${styles["search-button"]}`}
                       onClick={submit}
                     >
@@ -82,7 +82,7 @@ export function SearchBar(props) {
                       >
                         <i className="bi bi-search fw-bolder"></i>
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </form>
               </div>
@@ -110,14 +110,31 @@ export function SearchBar(props) {
             )}
             {props.loggedIn && (
               <>
-                <Link
+                <h5>Current User: </h5>
+                <input
+                  className="form-control mb-2"
+                  type="text"
+                  value={props.currentUser.username}
+                  readOnly
+                />
+                <button className="btn btn-danger me-2 fw-bolder">
+                  <Link
+                    to={`/profile/${props.currentUser.username}`}
+                    className="text-decoration-none text-black"
+                  >
+                    Profile
+                  </Link>
+                </button>
+              </>
+            )}
+            {/* <Link
                   to={`/profile/${props.currentUser.username}`}
                   className="text-decoration-none text-black"
                 >
                   <i className="bi bi-person-circle fs-2"></i>
                 </Link>
               </>
-            )}
+            )} */}
           </h3>
         </div>
       </div>

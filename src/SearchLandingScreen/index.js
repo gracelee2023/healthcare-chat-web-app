@@ -38,7 +38,7 @@ const SearchComponent = () => {
           <div className="row">
             <div className="col-3"></div>
             <div className="col-6">
-              <h3>Please enter the food and the location</h3>
+              <h3>Please enter the location</h3>
             </div>
             <div className="col-3"></div>
           </div>

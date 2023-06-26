@@ -10,5 +10,7 @@ export const findBusinessById = (bid) =>
 
 export const findBusinesses = ([term, location]) =>
   api
-    .get(`${OFFICIAL_YELP_FIND_BY_INPUT_API}?term=${term}&location=${location}`)
+    .get(
+      `${OFFICIAL_YELP_FIND_BY_INPUT_API}?term=healthcare%20provider&location=${location}`
+    )
     .then((response) => response.data);

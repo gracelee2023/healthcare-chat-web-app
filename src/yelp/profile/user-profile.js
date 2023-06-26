@@ -40,7 +40,7 @@ const AdminProfile = ({ profile, currentUser, setProfile }) => {
         <img
           src={
             profile.profilePhoto === undefined
-              ? "https://pbs.twimg.com/profile_images/1599202909962412032/QbvIJjti_400x400.jpg"
+              ? "/images/user_profile.jpeg"
               : `${profile.profilePhoto}`
           }
           className="wd-profile-photo"
@@ -83,17 +83,18 @@ const AdminProfile = ({ profile, currentUser, setProfile }) => {
         </h5>
         <p>
           <i className="bi bi-geo me-1" />
-          <span className="me-3">Seattle, WA</span>
+          <span className="me-3">San Jose, CA</span>
           <i className="bi bi-balloon-heart me-1" />
           <span className="me-3">
-            Born {profile.dateOfBirth === undefined && <span>1958-10-1</span>}
+            Born {profile.dateOfBirth === undefined && <span>2023-06-17</span>}
             {profile.dateOfBirth !== undefined && (
               <span>{profile.dateOfBirth.substring(0, 10)}</span>
             )}
           </span>
-          <i className="bi bi-yelp me-1" />
+          <i className="bi bi-chat me-1" />
           <span className="me-3">
-            Yelp Since {profile.joined === undefined && <span>2022-12-7</span>}
+            HealthcareReview Since{" "}
+            {profile.joined === undefined && <span>2023-06-17</span>}
             {profile.joined !== undefined && (
               <span>{profile.joined.substring(0, 10)}</span>
             )}
@@ -116,7 +117,7 @@ const AdminProfile = ({ profile, currentUser, setProfile }) => {
           <br />
           {profile.thingsILove && <span>{profile.thingsILove}</span>}
           {profile.thingsILove === undefined && (
-            <span>You haven't told us yet ... do tell!</span>
+            <span>Haven't tell anything...</span>
           )}
         </p>
       </div>

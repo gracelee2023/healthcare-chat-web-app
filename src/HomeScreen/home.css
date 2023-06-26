@@ -1,8 +1,9 @@
 .wd-home_banner {
-    height: 800px;
+    height: 500px;
     width: 100%;
     background-image: url("../../public/images/home_banner.jpeg");
     background-size: cover;
+    margin: 20px;
 }
 
 .wd-nudge-up {
