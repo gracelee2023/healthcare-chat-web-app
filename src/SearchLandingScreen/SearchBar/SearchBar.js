@@ -33,10 +33,10 @@ export function SearchBar(props) {
       <div className="row pt-3">
         <div className="col-3">
           <Link to="/" className="text-decoration-none">
-            <h4 className="ps-3 fw-bolder text-blue">
+            <h3 className="ps-3 fw-bolder text-blue">
               HealthcareReview
               <i className="bi bi-chat text-primary ms-2 bold-icon"></i>
-            </h4>
+            </h3>
           </Link>
         </div>
         <div className="col-6 pt-1">
@@ -73,16 +73,6 @@ export function SearchBar(props) {
                         placeholder="Where"
                       />
                     </p>
-                    {/* <div
-                      className={`button ${sizeClass} ${styles["search-button"]}`}
-                      onClick={submit}
-                    >
-                      <span
-                        className={`icon is-small ${styles["search-icon"]}`}
-                      >
-                        <i className="bi bi-search fw-bolder"></i>
-                      </span>
-                    </div> */}
                   </div>
                 </form>
               </div>
@@ -93,9 +83,13 @@ export function SearchBar(props) {
           <h3 className="text-black float-end pe-5">
             {!props.loggedIn && (
               <>
-                <label>Leave your reviews?</label>
-                <button className="btn btn-outline-dark me-2 fw-bolder">
-                  <Link to="/login" className="text-decoration-none text-black">
+                <div className="control">
+                  <div className={`text is-static ${sizeClass}`}>
+                    Your next review awaits..
+                  </div>
+                </div>
+                <button className="btn btn-primary me-2 fw-bolder">
+                  <Link to="/login" className="text-decoration-none text-white">
                     Log In
                   </Link>
                 </button>
@@ -128,14 +122,6 @@ export function SearchBar(props) {
                 </button>
               </>
             )}
-            {/* <Link
-                  to={`/profile/${props.currentUser.username}`}
-                  className="text-decoration-none text-black"
-                >
-                  <i className="bi bi-person-circle fs-2"></i>
-                </Link>
-              </>
-            )} */}
           </h3>
         </div>
       </div>
