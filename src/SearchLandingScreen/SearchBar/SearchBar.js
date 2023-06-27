@@ -31,7 +31,7 @@ export function SearchBar(props) {
   return (
     <div>
       <div className="row pt-3">
-        <div className="col-3">
+        <div className="col-12 col-md-3">
           <Link to="/" className="text-decoration-none">
             <h3 className="ps-3 fw-bolder text-blue">
               HealthcareReview
@@ -39,7 +39,7 @@ export function SearchBar(props) {
             </h3>
           </Link>
         </div>
-        <div className="col-6 pt-1">
+        <div className="col-12 col-md-6 pt-1">
           <div className="row">
             <div className={styles.landing}>
               <div className={styles["search-area"]}>
@@ -79,7 +79,7 @@ export function SearchBar(props) {
             </div>
           </div>
         </div>
-        <div className="col-3 pt-1">
+        <div className="col-12 col-md-3 pt-1">
           <h3 className="text-black float-end pe-5">
             {!props.loggedIn && (
               <>

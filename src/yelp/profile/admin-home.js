@@ -53,7 +53,11 @@ function AdminPage() {
   }, []);
   return (
     <div>
-      <h1>Admin Home</h1>
+      <div className="wd-profile-header">
+        <div className="wd-banner-photo" />
+        <img src={"/images/admin.png"} className="wd-profile-photo" />
+      </div>
+      <h1 style={{ color: "grey" }}>Admin Home</h1>
 
       <ul className="list-group">
         <li className="list-group-item">
@@ -132,14 +136,36 @@ function AdminPage() {
             >
               Delete
             </button>
-            {user.firstName} {user.lastName}
+            <p>
+              <i
+                className="bi bi-person-check-fill me-1"
+                style={{ color: "blue" }}
+              />
+              User: {user.username} ({user.firstName} {user.lastName})
+            </p>
+            <p>
+              <i className="bi bi-envelope me-1" style={{ color: "blue" }} />
+              Email: {user.email}
+            </p>
+            <p>
+              <i className="bi bi-tag me-1" style={{ color: "blue" }} />
+              Account Type: {user.accountType}
+            </p>
+            <p>
+              <i className="bi bi-calendar me-1" style={{ color: "red" }} />
+              Joined Date: {user.joined}
+            </p>
+            <p>
+              <i className="bi bi-heart-fill me-1" style={{ color: "red" }} />
+              followings: {user.followings}, followers: {user.followers}
+            </p>
           </li>
         ))}
       </ul>
 
-      <pre>
+      {/* <pre>
         <code>{JSON.stringify(users, null, 2)}</code>
-      </pre>
+      </pre> */}
     </div>
   );
 }

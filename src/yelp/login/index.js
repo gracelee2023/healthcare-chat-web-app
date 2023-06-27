@@ -12,7 +12,7 @@ function Login() {
         if (user.accountType === "ADMIN") {
           navigate("/admin");
         } else {
-          navigate("/");
+          navigate(`/profile/${user.username}`);
         }
       })
       .catch((e) => alert(e));
