@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 const User = ({ user }) => {
+  if (!user) {
+    return <div>No user data</div>;
+  }
   return (
     <li className="p-2 ttr-tuit list-group-item d-flex rounded-0">
       <div className="pe-2">

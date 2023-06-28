@@ -20,7 +20,13 @@ function Signup() {
     };
     service
       .signup(user)
-      .then(() => navigate(`/profile/${user.username}`))
+      .then(() => {
+        if (user.accountType === "ADMIN") {
+          navigate("/profile/admin");
+        } else {
+          navigate(`/profile/${user.username}`);
+        }
+      })
       .catch((e) => alert(e));
   };
 

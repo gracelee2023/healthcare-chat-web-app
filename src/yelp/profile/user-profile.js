@@ -133,7 +133,7 @@ const AdminProfile = ({ profile, currentUser, setProfile }) => {
               Reviews
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
               to={`/profile/${profile.username}/mycollects`}
               className={`nav-link ${
@@ -142,7 +142,7 @@ const AdminProfile = ({ profile, currentUser, setProfile }) => {
             >
               Collections
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link
               to={`/profile/${profile.username}/followings`}

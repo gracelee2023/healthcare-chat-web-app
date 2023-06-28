@@ -83,10 +83,10 @@ const DetailComponent = () => {
                 <span>Write a reivew</span>
               </button>
             </Link>
-            <button type="button" className="btn btn-light border-1 ms-3">
+            {/* <button type="button" className="btn btn-light border-1 ms-3">
               <i className="bi bi-bookmark me-2" />
               <span>Save</span>
-            </button>
+            </button> */}
           </div>
           <hr className="mt-3" />
           <div className="mt-3">
