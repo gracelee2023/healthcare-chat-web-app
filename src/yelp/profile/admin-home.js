@@ -75,10 +75,14 @@ function AdminPage() {
         </div>
       </div>
       <h1 style={{ color: "purple" }}>Admin Home</h1>
+      <hr />
 
       <ul className="list-group">
         {/* display all users */}
-        <label>List of users:</label>
+        <label style={{ paddingLeft: "15px", fontWeight: "bold" }}>
+          {" "}
+          List of users:
+        </label>
         {users.map((user) => (
           <li className="list-group-item" key={user._id}>
             {/* put a edit buttion to each user */}
@@ -122,7 +126,7 @@ function AdminPage() {
         ))}
 
         <li className="list-group-item">
-          <label>CRUD:</label>
+          <label style={{ fontWeight: "bold" }}>CRUD:</label>
           {/* create a update button */}
           <button
             onClick={() => handleUpdateUser()}
