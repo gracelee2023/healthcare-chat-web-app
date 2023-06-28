@@ -9,6 +9,7 @@ import Signup from "./yelp/signup";
 import Profile from "./yelp/profile";
 import EditProfile from "./yelp/profile/edit-profile";
 import AdminPage from "./yelp/profile/admin-home.js";
+import ProtectedRoute from "./yelp/profile/protected-route.js";
 
 function App() {
   return (
@@ -27,7 +28,14 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/admin" element={<AdminPage />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminPage />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/profile/:username/edit" element={<EditProfile />} />
             <Route path="/profile/:username/*" element={<Profile />} />
           </Routes>
