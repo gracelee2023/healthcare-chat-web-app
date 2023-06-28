@@ -5,6 +5,8 @@
 
 import React, { useEffect, useState } from "react";
 import { getUsers, createUser, deleteUser, updateUser } from "./users-service";
+import { Link, useNavigate } from "react-router-dom";
+import * as authService from "../../services/auth-service";
 
 function AdminPage() {
   const [users, setUsers] = useState([]);
@@ -43,6 +45,11 @@ function AdminPage() {
     setNewUser(user);
   };
 
+  const navigate = useNavigate();
+  const logout = () => {
+    authService.logout().then(() => navigate("/login"));
+  };
+
   useEffect(() => {
     const fetchUsers = async () => {
       const users = await getUsers();
@@ -51,16 +58,71 @@ function AdminPage() {
     // if we don't call fetchUsers() here, then the left side of the screen is not inquiring the data from the server
     fetchUsers();
   }, []);
+
   return (
     <div>
       <div className="wd-profile-header">
         <div className="wd-banner-photo" />
         <img src={"/images/admin.png"} className="wd-profile-photo" />
+        <div className="float-end">
+          <button
+            type="button"
+            onClick={logout}
+            className="mt-2 float-end btn btn-warning rounded-pill"
+          >
+            Logout
+          </button>
+        </div>
       </div>
-      <h1 style={{ color: "grey" }}>Admin Home</h1>
+      <h1 style={{ color: "purple" }}>Admin Home</h1>
 
       <ul className="list-group">
+        {/* display all users */}
+        <label>List of users:</label>
+        {users.map((user) => (
+          <li className="list-group-item" key={user._id}>
+            {/* put a edit buttion to each user */}
+            <button
+              onClick={() => handleEditUser(user)}
+              className="btn btn-warning float-end"
+            >
+              Edit
+            </button>
+            {/* put a delete buttion to each user */}
+            <button
+              onClick={() => handleDeleteUser(user._id)}
+              className="btn btn-danger float-end"
+            >
+              Delete
+            </button>
+            <p>
+              <i
+                className="bi bi-person-check-fill me-1"
+                style={{ color: "blue" }}
+              />
+              User: {user.username} ({user.firstName} {user.lastName})
+            </p>
+            <p>
+              <i className="bi bi-envelope me-1" style={{ color: "blue" }} />
+              Email: {user.email}
+            </p>
+            <p>
+              <i className="bi bi-tag me-1" style={{ color: "blue" }} />
+              Account Type: {user.accountType}
+            </p>
+            <p>
+              <i className="bi bi-calendar me-1" style={{ color: "red" }} />
+              Joined Date: {user.joined}
+            </p>
+            <p>
+              <i className="bi bi-heart-fill me-1" style={{ color: "red" }} />
+              followings: {user.followings}, followers: {user.followers}
+            </p>
+          </li>
+        ))}
+
         <li className="list-group-item">
+          <label>CRUD:</label>
           {/* create a update button */}
           <button
             onClick={() => handleUpdateUser()}
@@ -118,49 +180,6 @@ function AdminPage() {
             placeholder="Last Name"
           />
         </li>
-
-        {/* display all users */}
-        {users.map((user) => (
-          <li className="list-group-item" key={user._id}>
-            {/* put a edit buttion to each user */}
-            <button
-              onClick={() => handleEditUser(user)}
-              className="btn btn-warning float-end"
-            >
-              Edit
-            </button>
-            {/* put a delete buttion to each user */}
-            <button
-              onClick={() => handleDeleteUser(user._id)}
-              className="btn btn-danger float-end"
-            >
-              Delete
-            </button>
-            <p>
-              <i
-                className="bi bi-person-check-fill me-1"
-                style={{ color: "blue" }}
-              />
-              User: {user.username} ({user.firstName} {user.lastName})
-            </p>
-            <p>
-              <i className="bi bi-envelope me-1" style={{ color: "blue" }} />
-              Email: {user.email}
-            </p>
-            <p>
-              <i className="bi bi-tag me-1" style={{ color: "blue" }} />
-              Account Type: {user.accountType}
-            </p>
-            <p>
-              <i className="bi bi-calendar me-1" style={{ color: "red" }} />
-              Joined Date: {user.joined}
-            </p>
-            <p>
-              <i className="bi bi-heart-fill me-1" style={{ color: "red" }} />
-              followings: {user.followings}, followers: {user.followers}
-            </p>
-          </li>
-        ))}
       </ul>
 
       {/* <pre>
