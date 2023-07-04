@@ -33,10 +33,10 @@ export function SearchBar(props) {
       <div className="row pt-3">
         <div className="col-12 col-md-3">
           <Link to="/" className="text-decoration-none">
-            <h3 className="ps-3 fw-bolder text-blue">
+            <h2 className="ps-3 fw-bolder text-blue">
               HealthcareReview
               <i className="bi bi-chat text-primary ms-2 bold-icon"></i>
-            </h3>
+            </h2>
           </Link>
         </div>
         <div className="col-12 col-md-6 pt-1">
@@ -83,9 +83,9 @@ export function SearchBar(props) {
           <h3 className="text-black float-end pe-5">
             {!props.loggedIn && (
               <>
-                <div className="control">
+                <div className="control mb-2">
                   <div className={`text is-static ${sizeClass}`}>
-                    Your next review awaits..
+                    awaiting your review...
                   </div>
                 </div>
                 <button className="btn btn-primary me-2 fw-bolder">
