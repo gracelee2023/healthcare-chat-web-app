@@ -8,7 +8,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const signup = () => {
-    if (newUser.accountType === "ADMIN" && newUser.secretKey !== "cs5610") {
+    if (newUser.accountType === "ADMIN" && newUser.secretKey !== "admin") {
       alert("Invalid Admin");
       return;
     }

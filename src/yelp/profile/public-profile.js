@@ -10,7 +10,7 @@ const AnoyProfile = ({ profile }) => {
         <img
           src={
             profile.profilePhoto === undefined || null
-              ? "/images/user_profile.jpeg"
+              ? "/images/user_profile_avatar.png"
               : `${profile.profilePhoto}`
           }
           className="wd-profile-photo"

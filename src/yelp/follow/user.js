@@ -11,7 +11,7 @@ const User = ({ user }) => {
           <img
             src={
               user.profilePhoto === undefined
-                ? "https://pbs.twimg.com/profile_images/1599202909962412032/QbvIJjti_400x400.jpg"
+                ? "/images/user_profile_avatar.png"
                 : `${user.profilePhoto}`
             }
             className="ttr-tuit-avatar-logo"

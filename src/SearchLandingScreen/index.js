@@ -15,22 +15,6 @@ const SearchComponent = () => {
   const [businesses, amountResults, searchParams, performSearch] =
     useBusinessSearch(searchInputParams);
 
-  // let loggedIn = false;
-  // const [currentUser, setCurrentUser] = useState({});
-  // useEffect(() => {
-  //   try {
-  //     const getProfile = async () =>
-  //       await authService.profile().then((user) => setCurrentUser(user));
-  //     let user = getProfile();
-  //   } catch (e) {
-  //     setCurrentUser(undefined);
-  //   }
-  // }, []);
-  // console.log(currentUser);
-  // loggedIn = currentUser.username !== undefined;
-
-  // When path is plain simple '/search', show the search input and a message to user.
-
   const [currentUser, setCurrentUser] = useState(undefined);
 
   const getProfile = async () => {

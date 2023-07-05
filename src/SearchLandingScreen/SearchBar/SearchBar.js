@@ -31,7 +31,7 @@ export function SearchBar(props) {
   return (
     <div>
       <div className="row pt-3">
-        <div className="col-12 col-md-3">
+        <div className="col-12 col-md-3 pt-1">
           <Link to="/" className="text-decoration-none">
             <h2 className="ps-3 fw-bolder text-blue">
               HealthcareReview
