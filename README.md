@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+Full stack web development - Healthcare Review Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tech stack: HTML CSS, React, JavaScript
 
-## Available Scripts
+The Healthcare Review Web App has six distinct screens: Login/Register, Home, Profile, Search/results, Details.
 
-In the project directory, you can run:
+Home Page: 1. anonymous users can search healthcare providers near the place they input.
+           2. anonymous users can view all the reviews posted by users.
+           3. MapQuest API fetches the anonymous user’s current location; then yelp API fetches healthcare providers business information based on the user' current location.
+              
+Profile Page (logged-in user): 
+              1. display all the information about the current user. 
+              2. allow logged in users to change their personal information by clicking 'Edit profile" button.
+              3. display current user's number of followings, and number of followers
+              3. display current user's lists of reviwes
+              4. display current user's lists of followings
+              5. display current user's lists of followers
+            
+Public Profile Page (other user): 
+              1. display the basic information about the user 
+              2. allow the current user to follow/unfollow this user
+              
+Profile Page(ADMIN):
+              1. The admin profile page lists all the users’ information including admin him/herself 
+              2. The admin can create, update, delete users
 
-### `npm start`
+Search Page: 1. by inputing location into the "NEAR" box, yelp API fetches healthcare providers business information given the location input by the user
+             2. display healthcare provider's infomation including name, address, phone number, rating and catogory
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Detail Page: 1. display healthcare provider's basic infomation 
+             2. display a list of reviews for this healthcare provider, and there are links to the profile pages of folks who wrote the reviews
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Register Page: 1. There are two roles for registration, ADMIN role and PERSONAL role.
+               2. If the user is registering as ADMIN role, the user needs to input “Secret Key” correctly to do so. The “Secret 
+                   Key” is only available for ADMIN roles. In this program, “Secret Key” is “admin”. 
 
-### `npm test`
+Login Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+           
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
